@@ -4,6 +4,10 @@ type Pkg = {
 };
 
 export const packages: Record<string, Pkg> = {
+  "/custompkg": {
+    pkg: "ivan.dev/custompkg",
+    repoPath: "ivanvanderbyl/custompkg",
+  },
   "/wingtip": {
     pkg: "ivan.dev/wingtip",
     repoPath: "ivanvanderbyl/wingtip",

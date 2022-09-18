@@ -13,4 +13,4 @@ For more information on how this works, [see the Go docs](https://pkg.go.dev/cmd
 1. Fork this repo
 2. Edit [src/packages.ts](/src/packages.ts) to contain the packages you want host
 3. Deploy this worker to Cloudflare using `wrangler publish`
-4. Configure the worker in Cloudflare to respond to each path that you configured in step 2.
+4. Configure the worker in Cloudflare to respond to each path that you configured in step 2, remember to include a `*` on the end to match query params from `go get`. ![Setup example](/setup.png)
