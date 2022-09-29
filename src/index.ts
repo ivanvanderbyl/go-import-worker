@@ -11,10 +11,19 @@ export default {
     ctx: ExecutionContext
   ): Promise<Response> {
     let url = new URL(request.url);
+
     let pkg = packages[url.pathname];
 
     if (pkg == null) {
-      return new Response("Not found", { status: 404 });
+      let repo = url.pathname;
+      if (repo.startsWith("/")) {
+        repo = repo.slice(1);
+      }
+
+      pkg = {
+        pkg: `ivan.dev/${repo}`,
+        repoPath: `ivanvanderbyl/${repo}`,
+      };
     }
 
     return new HTMLResponse(
